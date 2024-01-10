@@ -1,7 +1,6 @@
 async function authSlat(ctx, next) {
-  const { slat } = ctx.request.body;
-  console.log();
-  if (ctx.request.method === "GET") {
+  const { slat } = ctx.request;
+  if (ctx.request.method === "GET" || ctx.request.url === "/we/upload") {
     await next();
     return;
   }
