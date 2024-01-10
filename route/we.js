@@ -20,7 +20,7 @@ router.post(
       uploadDir: process.env.FILE_PATH,
       keepExtensions: true,
       onFileBegin: (name, file) => {
-        const nanoName = Date.now().toString(36) + file.originalFilename;
+        const nanoName = Date.now().toString(36) + "-" + file.originalFilename;
         file.newFilename = nanoName;
         file.filepath = path.join(process.env.FILE_PATH, nanoName);
       },
